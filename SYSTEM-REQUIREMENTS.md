@@ -3,7 +3,11 @@
 ## Web-Based Car Wash Booking and Queue Management System
 
 **Version:** 1.0
+
+---
 **Date:** March 2026
+
+---
 **Status:** Draft
 
 ---
@@ -145,48 +149,47 @@ The system shall provide simple reports to support business decisions.
 
 ## 4. Non-Functional Requirements
 
-### 4.1 Usability
+### 4.1 Usability (NFR-US-01)
 
 - The system shall provide a responsive web interface
-- The system shall be easy to navigate for first-time users
-- The interface shall work on both desktop and mobile devices
+- The interface shall be usable on desktop and mobile devices
 
 ---
 
-### 4.2 Performance
+### 4.2 Performance (NFR-PF-01)
 
-- The system shall respond to user requests within 1 second under normal conditions
+- The system shall respond within 1 second
 - The system shall support at least 100 concurrent users
 
 ---
 
-### 4.3 Security
+### 4.3 Security (NFR-SE-01)
 
-- User passwords shall be encrypted using secure hashing (e.g., BCrypt)
-- The system shall use HTTPS for secure communication
-- The system shall implement authentication using JWT
-
----
-
-### 4.4 Reliability
-
-- The system shall be available at least 99% of the time
-- The system shall prevent data loss through proper data storage practices
+- Passwords shall be encrypted using BCrypt
+- The system shall use HTTPS
+- JWT authentication shall be implemented
 
 ---
 
-### 4.5 Maintainability
+### 4.4 Reliability (NFR-RL-01)
 
-- The system shall follow clean code principles
-- The system shall include documentation for developers
-- The system shall be modular to allow future improvements
+- System uptime shall be at least 99%
+- Data loss shall be prevented
 
 ---
 
-### 4.6 Deployability
+### 4.5 Maintainability (NFR-MT-01)
 
-- The system shall be deployable on a standard cloud platform or local environment
-- Docker may be used for containerization
+- Clean code principles shall be followed
+- Documentation shall be provided
+- Modular architecture shall be used
+
+---
+
+### 4.6 Deployability (NFR-DP-01)
+
+- The system shall be deployable locally or on cloud
+- Docker support shall be provided
 
 ---
 
@@ -194,15 +197,19 @@ The system shall provide simple reports to support business decisions.
 
 | Requirement ID | Stakeholder(s) | Category | Priority |
 |----------------|----------------|----------|----------|
-| FR1 | Customer, Admin | Functional | High |
-| FR2 | Customer, Business Owner | Functional | High |
-| FR3 | Customer, Business Owner | Functional | High |
-| FR4 | Customer, Staff | Functional | High |
-| FR5 | Customer | Functional | Medium |
-| FR6 | Admin | Functional | High |
-| FR7 | Business Owner | Functional | Medium |
-| NFR-Security | All | Non-Functional | High |
-| NFR-Performance | All | Non-Functional | Medium |
+| FR-01 | Customer | Functional | High |
+| FR-02 | Business Owner | Functional | High |
+| FR-03 | Customer, Business Owner | Functional | High |
+| FR-04 | Customer, Service Staff | Functional | High |
+| FR-05 | Customer | Functional | Medium |
+| FR-06 | Business Owner, Service Staff | Functional | High |
+| FR-07 | Business Owner | Functional | Medium |
+| NFR-US-01 | Customer | Non-Functional | Medium |
+| NFR-PF-01 | All | Non-Functional | High |
+| NFR-SE-01 | All | Non-Functional | High |
+| NFR-RL-01 | System Administrator | Non-Functional | High |
+| NFR-MT-01 | IT Support | Non-Functional | Medium |
+| NFR-DP-01 | IT Support | Non-Functional | Medium |
 
 ---
 

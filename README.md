@@ -42,6 +42,9 @@ Detailed system documentation and architecture diagrams are available in the fol
 
 - [System Specification](SPECIFICATION.md)
 - [System Architecture](ARCHITECTURE.md)
+- [Stakeholder Analysis](STAKEHOLDER-ANALYSIS.md)
+- [System Requirements](SYSTEM-REQUIREMENTS.md)
+- [Reflection](REFLECTION.md)
 
 ## Technology Stack (Planned)
 

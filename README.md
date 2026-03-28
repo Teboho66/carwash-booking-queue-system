@@ -45,7 +45,8 @@ Detailed system documentation and architecture diagrams are available in the fol
 - [Stakeholder Analysis](STAKEHOLDER-ANALYSIS.md)
 - [System Requirements](SYSTEM-REQUIREMENTS.md)
 - [Reflection](REFLECTION.md)
-- [Use Case Diagram](USE_CASE_DIAGRAM.md)
+- [Use Case Diagram](USE-CASE-DIAGRAM.md)
+- [Use Case Specifications](USE-CASE-SPECIFICATION.md)
 
 ## Technology Stack (Planned)
 

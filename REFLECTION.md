@@ -9,3 +9,13 @@ A further challenge was ensuring **traceability between stakeholder needs and sy
 Additionally, defining the **scope of the system** required careful control. There was a tendency to introduce advanced features such as payment integration, loyalty systems, and analytics. However, these were intentionally excluded from the MVP to maintain feasibility within the constraints of a semester project. This reinforced the importance of distinguishing between core requirements and future enhancements.
 
 Overall, this exercise demonstrated that requirements engineering is not only about defining system functionality, but also about managing trade-offs between competing stakeholder expectations. It highlighted the importance of clarity, traceability, and scope control in designing a system that is both practical to implement and aligned with stakeholder needs.
+
+# Reflection: Use Case Development
+
+The process of gathering requirements and designing use cases for the Car Wash Booking and Queue Management System was both insightful and challenging. One of the key learning experiences was understanding how abstract stakeholder needs can be translated into structured system functionality. Initially, identifying and clearly defining user requirements proved difficult, particularly in distinguishing between what users explicitly request and what the system implicitly requires to function effectively. This required a shift from a surface-level understanding to a more analytical and system-oriented perspective.
+
+A significant challenge encountered was structuring the use cases in a way that maintained logical consistency across all interactions. Defining the boundaries between basic flows and alternative flows was particularly demanding, as it required careful consideration of both normal and exceptional system behavior. Additionally, ensuring that each use case aligned with the overall system design without redundancy or ambiguity required iterative refinement.
+
+Another difficulty was maintaining clarity while handling multiple actors and interactions within the system. It became evident that improper structuring could lead to overly complex or confusing representations, which would negatively impact both understanding and implementation.
+
+Despite these challenges, the exercise significantly improved my ability to think in terms of real-world system operations and user interactions. It reinforced the importance of precision, clarity, and consistency in software design. Overall, the experience strengthened my understanding of requirements engineering and highlighted the critical role of use case modeling in bridging the gap between stakeholders and system implementation.

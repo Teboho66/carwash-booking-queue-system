@@ -50,6 +50,7 @@ Detailed system documentation and architecture diagrams are available in the fol
 - [Test Case Development](TEST-CASES.md)
 - [Agile User Stories](USER-STORIES.md)
 - [Product Backlog](PRODUCT-BACKLOG.md)
+- [Sprint Planning](SPRINT-PLAN.md)
 
 ## Technology Stack (Planned)
 

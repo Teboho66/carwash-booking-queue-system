@@ -48,6 +48,7 @@ Detailed system documentation and architecture diagrams are available in the fol
 - [Use Case Diagram](USE-CASE-DIAGRAM.md)
 - [Use Case Specifications](USE-CASE-SPECIFICATION.md)
 - [Test Case Development](TEST-CASES.md)
+- [Agile User Stories](USER-STORIES.md)
 
 ## Technology Stack (Planned)
 

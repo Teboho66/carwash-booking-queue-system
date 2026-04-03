@@ -19,3 +19,62 @@ A significant challenge encountered was structuring the use cases in a way that 
 Another difficulty was maintaining clarity while handling multiple actors and interactions within the system. It became evident that improper structuring could lead to overly complex or confusing representations, which would negatively impact both understanding and implementation.
 
 Despite these challenges, the exercise significantly improved my ability to think in terms of real-world system operations and user interactions. It reinforced the importance of precision, clarity, and consistency in software design. Overall, the experience strengthened my understanding of requirements engineering and highlighted the critical role of use case modeling in bridging the gap between stakeholders and system implementation.
+
+# Reflection: Agile User Stories, Backlog, and Sprint Planning
+
+## 1. Application of Agile Principles
+
+The development process for this project follows Agile principles, particularly iterative development, incremental delivery, and continuous feedback. Instead of attempting to build the entire system at once, the approach focuses on delivering a functional vertical slice of the system during the sprint, beginning with core features such as authentication, service browsing, booking, and queue management.
+
+This aligns with the Agile Manifesto’s emphasis on delivering working software frequently and prioritising customer value. By structuring the system around user stories and a prioritized backlog, development efforts remained focused on the most critical business functionalities required for a Minimum Viable Product (MVP).
+
+---
+
+## 2. Use of GitHub Projects and Issues
+
+GitHub Issues and the Project Kanban board are used to simulate a real-world Agile workflow. Each user story is represented as an issue, allowing for clear traceability between requirements, development tasks, and sprint planning.
+
+The Kanban board (Backlog, To Do, In progress, In review, Done) provides visibility into task progress and supported workflow management throughout the sprint. This helped in:
+
+- tracking development progress
+- identifying bottlenecks
+- maintaining accountability for task completion
+
+This approach reflects industry practices where tools such as Jira or Azure DevOps are used for Agile project management.
+
+---
+
+## 3. Sprint Planning Effectiveness
+
+The sprint planning process ensures that only a manageable set of high-priority (Must-have) user stories are selected. By focusing on a small number of tightly related features, the sprint is structured to deliver a complete and usable customer journey rather than fragmented functionality.
+
+Breaking down user stories into smaller, well-defined tasks improves estimation accuracy and ensured that work could be distributed effectively across the team. This reflects good Agile practice, where tasks are granular, actionable, and aligned with sprint goals.
+
+---
+
+## 4. Challenges Encountered
+
+One of the key challenges in applying Agile within this context is the absence of a real development team and continuous stakeholder feedback. Agile methodologies typically rely heavily on collaboration, daily stand-ups, and iterative feedback, which are difficult to fully simulate in an individual setting.
+
+Additionally, estimating effort without historical team velocity introduced some uncertainty in task sizing. This required making reasonable assumptions about development time and complexity.
+
+---
+
+## 5. Lessons Learned
+
+This assignment reinforces several important software engineering principles:
+
+- The importance of breaking down complex systems into manageable, iterative deliverables
+- The value of prioritization (MoSCoW) in ensuring focus on high-impact features
+- The effectiveness of vertical slicing in delivering usable functionality early
+- The role of structured planning (backlogs, sprint plans) in reducing development risk
+
+It also highlights that good system design is not only about architecture, but also about planning how the system is built over time.
+
+---
+
+## 6. Conclusion
+
+Overall, the Agile approach used in this project proves to be effective for managing complexity and ensuring structured progress toward an MVP. While certain aspects of Agile (such as real-time collaboration and continuous stakeholder feedback) are limited in this context, the use of user stories, backlog prioritization, sprint planning, and task tracking provided a strong foundation for disciplined and incremental software development.
+
+This approach closely mirrors real-world Agile practices and provides a solid basis for future team-based software engineering projects.

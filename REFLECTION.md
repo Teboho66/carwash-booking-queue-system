@@ -28,6 +28,18 @@ The development process for this project follows Agile principles, particularly 
 
 This aligns with the Agile Manifesto’s emphasis on delivering working software frequently and prioritising customer value. By structuring the system around user stories and a prioritized backlog, development efforts remained focused on the most critical business functionalities required for a Minimum Viable Product (MVP).
 
+# Reflection: GitHub Project Templates and Kanban Board Implementation
+
+Selecting and customizing a GitHub Project template for the Web-Based Car Wash Booking and Queue Management System was a useful exercise in understanding how project management tools influence workflow visibility and team coordination. One of the main challenges was deciding which project management structure best suited the needs of the system. Since the project had already been developed through requirements analysis, use cases, user stories, backlog planning, and sprint planning, the selected template needed to support both Agile workflow tracking and incremental MVP delivery.
+
+A key challenge was choosing between GitHub’s available project approaches such as Kanban, Iterative Development, and Roadmaps. Kanban was ultimately selected because it provides the clearest visual workflow for active development tasks and integrates well with GitHub Issues. However, the decision was not simply about choosing the most familiar option. It required evaluating how each approach supported the actual needs of this project. For example, Iterative Development reflects how the project is being built incrementally, while Roadmaps are useful for higher-level planning and future expansion. Despite this, Kanban was the most suitable as the primary execution board because it offers immediate visibility into task progress.
+
+Another challenge was customizing the board beyond the default workflow. A basic Kanban board is often limited to simple stages such as To Do, In Progress, and Done. For this project, that was not sufficient. Additional workflow stages such as Backlog, In Review, and Testing were added to better reflect the actual development lifecycle. This customization improved clarity, but it also required careful thought to avoid making the workflow unnecessarily complex. The goal was to strike a balance between realism and simplicity.
+
+Comparing GitHub Projects to other tools such as Trello and Jira highlighted both strengths and limitations. Trello is simple and highly visual, which makes it useful for lightweight task tracking, but it lacks the deeper integration with repository work that GitHub provides. Jira offers much more advanced Agile functionality, including sprint metrics, reporting, and workflow automation, but it can be more complex and heavier to configure. GitHub Projects sits between these tools: it is more integrated than Trello and simpler than Jira, making it very suitable for a repository-centered academic or small-team project.
+
+Overall, this exercise showed that selecting a project management template is not just about aesthetics or convenience. It is about choosing a structure that reflects the way work actually moves through the system lifecycle. Customizing the GitHub Kanban board made the workflow more realistic, improved traceability from issues to implementation, and strengthened the project’s alignment with Agile development practices.
+
 ---
 
 ## 2. Use of GitHub Projects and Issues

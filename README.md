@@ -54,6 +54,7 @@ Detailed system documentation and architecture diagrams are available in the fol
 - [Template Analysis](TEMPLATE-ANALYSIS.md)
 - [Kanban Explanation](KANBAN-EXPLANATION.md)
 - [Object State Modeling](STATE-DIAGRAMS.md)
+- [Activity Workflow Modeling](ACTIVITY-DIAGRAMS.md)
 
 ## Technology Stack (Planned)
 

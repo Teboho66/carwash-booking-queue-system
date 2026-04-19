@@ -53,6 +53,7 @@ Detailed system documentation and architecture diagrams are available in the fol
 - [Sprint Planning](SPRINT-PLAN.md)
 - [Template Analysis](TEMPLATE-ANALYSIS.md)
 - [Kanban Explanation](KANBAN-EXPLANATION.md)
+- [Object State Modeling](STATE-DIAGRAMS.md)
 
 ## Technology Stack (Planned)
 

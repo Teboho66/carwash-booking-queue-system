@@ -55,6 +55,7 @@ Detailed system documentation and architecture diagrams are available in the fol
 - [Kanban Explanation](KANBAN-EXPLANATION.md)
 - [Object State Modeling](STATE-DIAGRAMS.md)
 - [Activity Workflow Modeling](ACTIVITY-DIAGRAMS.md)
+- [Traceability Mapping](TRACEABILITY.md)
 
 ## Technology Stack (Planned)
 

@@ -244,3 +244,38 @@ flowchart TD
   - Strongly supports **FR-01 User Registration and Authentication**.
   - Maps to use case **Authenticate User**.
   - Mirrors Assignment 6 stories around secure login and session security for MVP readiness.
+
+## 9. GitHub Issue / Work Item State Diagram
+
+```mermaid
+flowchart TD
+    A([Start]) --> B[Open]
+    B -->|backlog prioritization| C[Prioritized]
+    C -->|selected for active work| D[In Progress]
+
+    D -->|implementation completed| E[In Review]
+    E -->|review approved| F[Testing]
+    E -->|changes requested| D
+
+    F -->|tests passed| G[Done]
+    F -->|tests failed| D
+
+    D -->|dependency or issue encountered| H[Blocked]
+    H -->|issue resolved| D
+
+    G --> I[Closed]
+    I --> J([End])
+```
+
+### Explanation
+
+- **Key states**: `Open`, `Prioritized`, `In Progress`, `In Review`, `Testing`, `Done`, and `Closed` reflect the lifecycle of a work item in the GitHub Kanban workflow.
+- **Key transitions**: issues move from backlog into implementation, then through review and testing before closure.
+- **Relevant guards**:
+  - `review approved` before entering testing.
+  - `tests passed` before being marked done.
+  - blocked work can only resume once dependencies or issues are resolved.
+- **Traceability**:
+  - Supports Assignment 6 backlog and sprint planning artefacts.
+  - Directly aligns with Assignment 7 GitHub Kanban workflow columns.
+  - Reinforces implementation readiness for functional requirements and user stories.

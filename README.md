@@ -57,6 +57,7 @@ Detailed system documentation and architecture diagrams are available in the fol
 - [Activity Workflow Modeling](ACTIVITY-DIAGRAMS.md)
 - [Traceability Mapping](TRACEABILITY.md)
 - [Domain Model](DOMAIN-MODEL.md)
+- [Class Diagram](CLASS-DIAGRAM.md)
 
 ## Technology Stack (Planned)
 

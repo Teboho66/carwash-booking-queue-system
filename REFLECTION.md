@@ -1,4 +1,6 @@
-# Reflection: Challenges in Requirements Engineering
+# Reflection
+
+## Challenges in Requirements Engineering
 
 Completing the stakeholder analysis and system requirements for the Web-Based Car Wash Booking and Queue Management System highlighted the complexity of balancing diverse stakeholder needs within a single system. One of the primary challenges encountered was aligning the priorities of the **Business Owner** and **Service Staff**. While the Business Owner focused on maximizing operational efficiency and increasing the number of daily bookings (FR-03, FR-07), the Service Staff required a manageable and clearly defined workflow to avoid confusion in queue handling (FR-04, FR-06). These needs are inherently interconnected but can conflict if not carefully designed. The solution was to ensure that the queue management system provides both operational visibility for the business and simplicity for staff execution.
 
@@ -10,7 +12,7 @@ Additionally, defining the **scope of the system** required careful control. The
 
 Overall, this exercise demonstrated that requirements engineering is not only about defining system functionality, but also about managing trade-offs between competing stakeholder expectations. It highlighted the importance of clarity, traceability, and scope control in designing a system that is both practical to implement and aligned with stakeholder needs.
 
-# Reflection: Use Case Development
+## Use Case Development
 
 The process of gathering requirements and designing use cases for the Car Wash Booking and Queue Management System was both insightful and challenging. One of the key learning experiences was understanding how abstract stakeholder needs can be translated into structured system functionality. Initially, identifying and clearly defining user requirements proved difficult, particularly in distinguishing between what users explicitly request and what the system implicitly requires to function effectively. This required a shift from a surface-level understanding to a more analytical and system-oriented perspective.
 
@@ -20,15 +22,15 @@ Another difficulty was maintaining clarity while handling multiple actors and in
 
 Despite these challenges, the exercise significantly improved my ability to think in terms of real-world system operations and user interactions. It reinforced the importance of precision, clarity, and consistency in software design. Overall, the experience strengthened my understanding of requirements engineering and highlighted the critical role of use case modeling in bridging the gap between stakeholders and system implementation.
 
-# Reflection: Agile User Stories, Backlog, and Sprint Planning
+## Agile User Stories, Backlog, and Sprint Planning
 
-## 1. Application of Agile Principles
+### 1. Application of Agile Principles
 
 The development process for this project follows Agile principles, particularly iterative development, incremental delivery, and continuous feedback. Instead of attempting to build the entire system at once, the approach focuses on delivering a functional vertical slice of the system during the sprint, beginning with core features such as authentication, service browsing, booking, and queue management.
 
 This aligns with the Agile Manifesto’s emphasis on delivering working software frequently and prioritising customer value. By structuring the system around user stories and a prioritized backlog, development efforts remained focused on the most critical business functionalities required for a Minimum Viable Product (MVP).
 
-# Reflection: GitHub Project Templates and Kanban Board Implementation
+## GitHub Project Templates and Kanban Board Implementation
 
 Selecting and customizing a GitHub Project template for the Web-Based Car Wash Booking and Queue Management System was a useful exercise in understanding how project management tools influence workflow visibility and team coordination. One of the main challenges was deciding which project management structure best suited the needs of the system. Since the project had already been developed through requirements analysis, use cases, user stories, backlog planning, and sprint planning, the selected template needed to support both Agile workflow tracking and incremental MVP delivery.
 
@@ -42,7 +44,7 @@ Overall, this exercise showed that selecting a project management template is no
 
 ---
 
-## 2. Use of GitHub Projects and Issues
+### 2. Use of GitHub Projects and Issues
 
 GitHub Issues and the Project Kanban board are used to simulate a real-world Agile workflow. Each user story is represented as an issue, allowing for clear traceability between requirements, development tasks, and sprint planning.
 
@@ -56,7 +58,7 @@ This approach reflects industry practices where tools such as Jira or Azure DevO
 
 ---
 
-## 3. Sprint Planning Effectiveness
+### 3. Sprint Planning Effectiveness
 
 The sprint planning process ensures that only a manageable set of high-priority (Must-have) user stories are selected. By focusing on a small number of tightly related features, the sprint is structured to deliver a complete and usable customer journey rather than fragmented functionality.
 
@@ -64,7 +66,7 @@ Breaking down user stories into smaller, well-defined tasks improves estimation 
 
 ---
 
-## 4. Challenges Encountered
+### 4. Challenges Encountered
 
 One of the key challenges in applying Agile within this context is the absence of a real development team and continuous stakeholder feedback. Agile methodologies typically rely heavily on collaboration, daily stand-ups, and iterative feedback, which are difficult to fully simulate in an individual setting.
 
@@ -72,9 +74,9 @@ Additionally, estimating effort without historical team velocity introduced some
 
 ---
 
-## 5. Lessons Learned
+### 5. Lessons Learned
 
-This assignment reinforces several important software engineering principles:
+This work reinforces several important software engineering principles:
 
 - The importance of breaking down complex systems into manageable, iterative deliverables
 - The value of prioritization (MoSCoW) in ensuring focus on high-impact features
@@ -85,15 +87,15 @@ It also highlights that good system design is not only about architecture, but a
 
 ---
 
-## 6. Conclusion
+### 6. Conclusion
 
 Overall, the Agile approach used in this project proves to be effective for managing complexity and ensuring structured progress toward an MVP. While certain aspects of Agile (such as real-time collaboration and continuous stakeholder feedback) are limited in this context, the use of user stories, backlog prioritization, sprint planning, and task tracking provided a strong foundation for disciplined and incremental software development.
 
 This approach closely mirrors real-world Agile practices and provides a solid basis for future team-based software engineering projects.
 
-# Reflection: Object State Modeling and Activity Workflow Modeling
+## Object State Modeling and Activity Workflow Modeling
 
-Completing the object state modeling and activity workflow modeling for the **Web-Based Car Wash Booking and Queue Management System** provided a deeper understanding of the system’s dynamic behavior. While previous assignments focused on requirements, use cases, Agile planning, and project workflow, this assignment required a more detailed view of how objects behave over time and how system processes unfold step by step.
+Completing the object state modeling and activity workflow modeling for the **Web-Based Car Wash Booking and Queue Management System** provided a deeper understanding of the system’s dynamic behavior. While previous work focused on requirements, use cases, Agile planning, and project workflow, this required a more detailed view of how objects behave over time and how system processes unfold step by step.
 
 One of the main challenges was choosing the right **granularity** for both states and workflow actions. If too much detail was added, the diagrams became difficult to read and started resembling implementation logic rather than analysis models. If too little detail was included, the diagrams became too abstract and did not fully explain the lifecycle or workflow of the system. This balancing act was especially noticeable in objects such as **Booking**, **Queue Entry**, and **Authentication Session**, where multiple valid intermediate states could exist. The challenge was to include enough detail to make the diagrams meaningful while still keeping them aligned to the MVP scope established in earlier.
 
@@ -104,3 +106,19 @@ A useful insight from this exercise was the distinction between **state diagrams
 This also highlighted the importance of consistency across different modeling techniques. A workflow cannot be realistic if it contradicts the object lifecycle, and an object lifecycle is less useful if it is not reflected in system workflows. As a result, both modeling approaches needed to be aligned with the same functional requirements, use cases, user stories, and backlog priorities.
 
 Overall, this strengthened my ability to model dynamic system behavior in a structured and readable way. It showed that software design is not only about identifying features, but also about understanding how objects evolve, how workflows operate, and how these views must stay aligned with prior analysis and Agile planning. This is an important step toward implementation because it provides a clearer behavioral blueprint for the system.
+
+## Domain Modeling and Class Diagram Development
+
+Developing the domain model and class diagram for the **Web-Based Car Wash Booking and Queue Management System** was an important step in moving from behavioral understanding to structural design. Earlier focused on requirements, use cases, Agile planning, and dynamic system behavior. This work required a different kind of thinking: identifying the most important domain concepts, deciding how they should be represented as classes, and determining how those classes relate to one another in a way that supports both the MVP and future implementation.
+
+One of the main challenges in designing the domain model was **abstraction**. The system includes many possible concepts that could be modeled, such as customers, business owners, staff, reports, payments, analytics, ratings, and scheduling policies. The difficulty was deciding which of these truly belonged in the **core domain model** for the MVP and which should remain outside the current scope. If too many entities were included, the model would become overly complex and would drift away from the system that had been defined in previous work. To avoid this, the model was intentionally centered on the most important entities needed for the MVP: `User`, `Role`, `Vehicle`, `Service`, `Booking`, `QueueEntry`, and `Notification`. This helped maintain consistency with the requirements and use cases while keeping the design manageable.
+
+Another challenge was defining the **relationships** between entities. Some relationships were straightforward, such as a user owning multiple vehicles or a service being used in multiple bookings. Others required more careful thought. For example, the relationship between `Booking` and `QueueEntry` raised an important design question: should a queue entry be modeled as something fully contained within a booking, or as an associated object with its own lifecycle? I chose to model this relationship conservatively, recognizing that while a queue entry is strongly linked to a booking, it still has distinct behavior in the system’s queue workflow. This reflected a broader lesson that relationship choice in object-oriented design is not just about technical notation, but about accurately representing how the business domain behaves.
+
+A further design trade-off involved **inheritance versus composition/association**. At first, it was tempting to model customer, administrator, and staff as separate subclasses of `User`. However, doing this would have added unnecessary complexity for the MVP and would have required additional specialization logic. Instead, I used a `User` + `Role` design, where roles govern permissions and operational access. This approach was simpler, easier to maintain, and more consistent with the system’s earlier role-based access control logic. This decision highlighted the importance of avoiding inheritance where a simpler association-based design is sufficient.
+
+The class diagram also had to align with prior work. The chosen classes and relationships directly support **functional requirements**, especially authentication, service catalog management, booking, queue management, and notifications. They also align with **use cases**, since each major use case now maps to one or more classes and operations. In addition, the class structure had to remain compatible with **state and activity diagrams**, particularly for objects such as `Booking`, `QueueEntry`, and `Notification`, whose lifecycles and workflows had already been modeled dynamically. This showed how structural design must remain grounded in previously established behavior.
+
+One of the most valuable lessons from this was that object-oriented design is not just about drawing classes and connecting them with lines. It is about making thoughtful design decisions that balance clarity, correctness, maintainability, and scope. The exercise improved my understanding of how domain entities emerge from requirements, how business rules influence relationships, and how UML class diagrams can serve as a bridge between analysis and implementation.
+
+Overall, this strengthened my ability to think about software systems in terms of both **business concepts** and **design structure**. It reinforced the importance of abstraction, careful relationship modeling, and consistency with prior requirements and behavioral models. Most importantly, it showed that a well-designed class diagram is not only a documentation artifact, but also a practical guide for implementation.

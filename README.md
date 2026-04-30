@@ -81,3 +81,61 @@ The system will be developed using the following technologies:
 - C4 Model using Mermaid diagrams
 
 ## Project Status
+
+## From Class Diagrams to Code
+
+For Class Diagrams to Code with All Creational Patterns, Java 21 and Spring Boot with Maven were selected because they align with the planned backend and API implementation approach for this system. The implementation work translates the Domain Modeling and Class Diagram Development Mermaid class diagram into concrete Java classes in the project domain model. In addition, all required creational design patterns were implemented to demonstrate multiple object-creation strategies in a domain-relevant way. Unit tests were added to validate these pattern implementations and support maintainable evolution of the codebase.
+
+### Source Code Structure
+
+```text
+src/main/java/com/carwash/
+├── domain/
+├── enums/
+└── creational_patterns/
+    ├── simple_factory/
+    ├── factory_method/
+    ├── abstract_factory/
+    ├── builder/
+    ├── prototype/
+    └── singleton/
+```
+
+### Creational Pattern Rationale
+
+| Pattern | Implementation | Purpose |
+|--------|----------------|---------|
+| Simple Factory | VehicleFactory | Centralizes creation of vehicle-type objects |
+| Factory Method | Notification sender factories | Delegates notification sender creation to concrete factories |
+| Abstract Factory | Dashboard component factories | Creates related role-based dashboard component families |
+| Builder | BookingBuilder | Builds booking objects step-by-step with validation |
+| Prototype | ServicePrototypeRegistry | Clones reusable service templates |
+| Singleton | ApplicationConfig | Provides one shared application configuration instance |
+
+Although not every creational pattern would be required in a small MVP, all six patterns were implemented because Class Diagrams to Code with All Creational Patterns requires them. Each pattern was adapted to the car wash booking and queue management domain where possible.
+
+### Testing and Coverage
+
+Run unit tests:
+
+```bash
+mvn clean test
+```
+
+Generate unit test coverage report:
+
+```bash
+mvn clean test jacoco:report
+```
+
+Coverage report output:
+
+```text
+target/site/jacoco/index.html
+```
+
+![alt text](assets/JaCoCo-Object-Creation-Test-Coverage.png)
+
+### GitHub Project Update Note
+
+Class Diagrams to Code with All Creational Patterns implementation and testing tasks were tracked using GitHub Issues. Related issues were moved through the GitHub Project Kanban workflow as work progressed. Completed implementation and testing items should be moved to **Done** where applicable, and any defects or improvements identified during testing should be captured as new issues for follow-up.

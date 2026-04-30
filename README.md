@@ -134,6 +134,8 @@ Coverage report output:
 target/site/jacoco/index.html
 ```
 
+![alt text](assets/JaCoCo-Object-Creation-Test-Coverage.png)
+
 ### GitHub Project Update Note
 
 Class Diagrams to Code with All Creational Patterns implementation and testing tasks were tracked using GitHub Issues. Related issues were moved through the GitHub Project Kanban workflow as work progressed. Completed implementation and testing items should be moved to **Done** where applicable, and any defects or improvements identified during testing should be captured as new issues for follow-up.

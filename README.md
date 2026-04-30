@@ -81,3 +81,18 @@ The system will be developed using the following technologies:
 - C4 Model using Mermaid diagrams
 
 ## Project Status
+
+## Assignment 10: Creational Pattern Implementation
+
+For Assignment 10, all six creational design patterns were implemented as required and adapted to the car wash booking and queue management domain.
+
+| Pattern | Implementation | Purpose |
+|--------|----------------|---------|
+| Simple Factory | `VehicleFactory` and vehicle variants | Centralized vehicle creation for booking/registration workflows |
+| Factory Method | Notification sender factories and senders | Create channel-specific notification senders (email/SMS) without hard-coding |
+| Abstract Factory | Customer/Admin dashboard component families | Generate related role-based UI components consistently |
+| Builder | `BookingBuilder` (with `BuiltBooking`) | Construct booking data step-by-step with required-field validation |
+| Prototype | Service prototype templates and registry | Clone reusable wash service templates like `BASIC_WASH` and `PREMIUM_WASH` |
+| Singleton | `ApplicationConfig` | Provide a single, shared application-level configuration instance |
+
+Although not every creational pattern would be required in a small MVP, all six were implemented for academic demonstration and to show different object creation strategies.

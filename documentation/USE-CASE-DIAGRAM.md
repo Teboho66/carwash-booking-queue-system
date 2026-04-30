@@ -4,7 +4,7 @@
 
 The following UML-style use case diagram models the MVP interactions for the **Web-Based Car Wash Booking and Queue Management System**, aligned with the functional requirements from Assignment 4 (FR-01 to FR-07).
 
-![alt text](assets/Use-Case-Diagram.png)
+![alt text](../assets/Use-Case-Diagram.png)
 
 ## 2. Explanation
 

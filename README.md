@@ -177,3 +177,27 @@ repo.printStorage();
 
 This is useful for debugging CRUD flows without any database connection.
 
+### Repository Storage Abstraction
+
+For this section, the **Factory Pattern** was selected to implement storage abstraction because it clearly demonstrates how repository implementations can be switched between storage backends.
+
+Application code now depends on repository interfaces (for example, `UserRepository`) rather than concrete `HashMap`-based classes. The factory controls which implementation is returned.
+
+Current supported backend:
+- `MEMORY`
+
+Planned future backend options:
+- `DATABASE`
+- `FILESYSTEM`
+- `API`
+
+Any unsupported storage type currently throws `UnsupportedOperationException`, making unsupported options explicit while keeping the interface stable.
+
+This approach improves separation of concerns, testability, and future scalability. Dependency Injection can still be introduced later when integrating with Spring services, but the Factory Pattern was chosen here because it is simple, explicit, and aligns with the assignment scope.
+
+Example usage:
+
+```java
+UserRepository userRepository =
+        RepositoryFactory.getUserRepository(StorageType.MEMORY);
+```

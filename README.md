@@ -139,3 +139,41 @@ target/site/jacoco/index.html
 ### GitHub Project Update Note
 
 Class Diagrams to Code with All Creational Patterns implementation and testing tasks were tracked using GitHub Issues. Related issues were moved through the GitHub Project Kanban workflow as work progressed. Completed implementation and testing items should be moved to **Done** where applicable, and any defects or improvements identified during testing should be captured as new issues for follow-up.
+
+In-Memory Repository Layer
+
+HashMap-based in-memory repository implementations were added for the repository interfaces in `com.carwash.repository`.
+
+### What was implemented
+
+- A reusable generic `InMemoryRepository<T, ID>` base class for shared CRUD behavior.
+- Entity-specific in-memory repositories for `User`, `Role`, `Vehicle`, `Service`, `Booking`, `QueueEntry`, and `Notification`.
+- CRUD support (`save`, `findById`, `findAll`, `delete`) with `Optional` for `findById` and defensive `List` copy return for `findAll`.
+- Interface-specific finder methods implemented in-memory where domain relationships are available.
+
+### Why this helps
+
+- Supports fast development and unit testing without database dependencies.
+- Keeps persistence concerns behind repository interfaces.
+- Allows easy replacement with filesystem/database/API persistence implementations later without changing service/domain consumers.
+
+### Inspecting in-memory HashMap state
+
+You can inspect how the in-memory `HashMap` is being used during runtime:
+
+```text
+InMemoryUserRepository repo = new InMemoryUserRepository();
+repo.save(user);
+
+// immutable snapshot (safe for debugging)
+Map<String, User> snapshot = repo.storageSnapshot();
+
+// string rendering of current map entries
+String view = repo.storageAsString();
+
+// direct console print
+repo.printStorage();
+```
+
+This is useful for debugging CRUD flows without any database connection.
+

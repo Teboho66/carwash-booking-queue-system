@@ -10,6 +10,8 @@ public final class RepositoryFactory {
     public static UserRepository getUserRepository(StorageType storageType) {
         validateStorageType(storageType);
         return switch (storageType) {
+            // DATABASE remains intentionally unsupported for now.
+            // See com.carwash.repository.database.DatabaseUserRepository for the future stub structure.
             case MEMORY -> new InMemoryUserRepository();
             default -> unsupportedStorageType(storageType);
         };

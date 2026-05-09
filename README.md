@@ -58,6 +58,7 @@ Detailed system documentation and architecture diagrams are available in the fol
 - [Traceability Mapping](documentation/TRACEABILITY.md)
 - [Domain Model](documentation/DOMAIN-MODEL.md)
 - [Class Diagram](documentation/CLASS-DIAGRAM.md)
+- [Repository Class Diagram](documentation/REPOSITORY-CLASS-DIAGRAM.md)
 
 ## Technology Stack (Planned)
 
@@ -118,13 +119,13 @@ Although not every creational pattern would be required in a small MVP, all six 
 
 Run unit tests:
 
-```bash
+```text
 mvn clean test
 ```
 
 Generate unit test coverage report:
 
-```bash
+```text
 mvn clean test jacoco:report
 ```
 
@@ -201,3 +202,15 @@ Example usage:
 UserRepository userRepository =
         RepositoryFactory.getUserRepository(StorageType.MEMORY);
 ```
+
+### Repository Future-Proofing
+
+The repository layer is designed so that storage backends can be swapped without changing business logic. Application code depends on repository interfaces, and each backend provides concrete implementations of those same contracts.
+
+- In-memory repositories are currently implemented for fast testing and simple persistence.
+- A database-backed repository stub (`DatabaseUserRepository`) was added to demonstrate how future persistence can be introduced.
+- The factory abstraction already includes future storage types such as `DATABASE`, `FILESYSTEM`, and `API`.
+- Future implementations can replace in-memory repositories by implementing the same repository interfaces.
+- The updated repository class diagram documents this extension point.
+
+[Repository Class Diagram](REPOSITORY-CLASS-DIAGRAM.md)

@@ -213,4 +213,14 @@ The repository layer is designed so that storage backends can be swapped without
 - Future implementations can replace in-memory repositories by implementing the same repository interfaces.
 - The updated repository class diagram documents this extension point.
 
-[Repository Class Diagram](REPOSITORY-CLASS-DIAGRAM.md)
+[Repository Class Diagram](documentation/REPOSITORY-CLASS-DIAGRAM.md)
+
+## Service Layer
+
+A service layer has been introduced between future controllers and the repository layer.
+
+- Services now host business rules and validation logic.
+- Repositories remain responsible for persistence operations.
+- Current MVP service coverage includes: User, Vehicle, Service, Booking, and QueueEntry.
+- Role remains a supporting access-control concept and is not implemented as a separate service in this task.
+- 

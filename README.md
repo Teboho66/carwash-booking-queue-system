@@ -236,3 +236,26 @@ REST controllers were added for User, Vehicle, Service, Booking, and QueueEntry.
 | Service | `/api/services` | CRUD, activate/deactivate |
 | Booking | `/api/bookings` | CRUD, confirm/cancel |
 | QueueEntry | `/api/queue-entries` | CRUD, call/start/complete |
+
+### API Documentation
+
+Swagger UI is available after running the Spring Boot application:
+
+```text
+http://localhost:8080/swagger-ui/index.html
+```
+
+OpenAPI JSON:
+
+```text
+http://localhost:8080/v3/api-docs
+```
+
+See: [API Documentation](documentation/API-DOCUMENTATION.md)
+
+Swagger UI screenshots: [Swagger UI Screenshots](documentation/screenshots/)
+- [Services](documentation/screenshots/swagger-ui-services.png)
+- [Users and Queue Entries](documentation/screenshots/swagger-ui-users-and-queue-entries.png)
+- [Bookings and Vehicles](documentation/screenshots/swagger-ui-bookings-and-vehicles.png)
+- [Users and Queue Entries](documentation/screenshots/swagger-ui-schemas.png)
+- [Bookings and Vehicles](documentation/screenshots/v3-api-docs.png)

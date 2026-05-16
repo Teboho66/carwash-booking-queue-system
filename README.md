@@ -223,4 +223,16 @@ A service layer has been introduced between future controllers and the repositor
 - Repositories remain responsible for persistence operations.
 - Current MVP service coverage includes: User, Vehicle, Service, Booking, and QueueEntry.
 - Role remains a supporting access-control concept and is not implemented as a separate service in this task.
-- 
+-
+
+## REST API
+
+REST controllers were added for User, Vehicle, Service, Booking, and QueueEntry. Controllers delegate to service-layer classes (no business logic in controllers) and currently run on in-memory repositories.
+
+| Entity | Base Endpoint | Supported Operations |
+|--------|---------------|----------------------|
+| User | `/api/users` | CRUD |
+| Vehicle | `/api/vehicles` | CRUD |
+| Service | `/api/services` | CRUD, activate/deactivate |
+| Booking | `/api/bookings` | CRUD, confirm/cancel |
+| QueueEntry | `/api/queue-entries` | CRUD, call/start/complete |

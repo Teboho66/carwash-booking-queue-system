@@ -54,4 +54,9 @@ public class ApiIntegrationTest {
         String invalidBooking = "{\"bookingId\":\"b2\",\"userId\":\"u2\",\"vehicleId\":\"v2\",\"serviceId\":\"s2\",\"scheduledDateTime\":\"" + LocalDateTime.now().minusDays(1) + "\",\"specialRequest\":\"none\"}";
         mockMvc.perform(post("/api/bookings").contentType(MediaType.APPLICATION_JSON).content(invalidBooking)).andExpect(status().isBadRequest());
     }
+
+    @Test
+    void openApiDocsEndpointAvailable() throws Exception {
+        mockMvc.perform(get("/v3/api-docs")).andExpect(status().isOk());
+    }
 }

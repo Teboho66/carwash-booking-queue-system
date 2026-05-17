@@ -1,0 +1,31 @@
+name: Continuous Integration Pipeline and Artifact Build
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches:
+      - master
+
+env:
+  JDK_VERSION: 21
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v6.0.2
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@v5.2.0
+        with:
+          java-version: ${{ env.JDK_VERSION }}
+          distribution: temurin
+          cache: maven
+
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml

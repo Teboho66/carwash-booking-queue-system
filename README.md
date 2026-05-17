@@ -59,6 +59,7 @@ Detailed system documentation and architecture diagrams are available in the fol
 - [Domain Model](documentation/DOMAIN-MODEL.md)
 - [Class Diagram](documentation/CLASS-DIAGRAM.md)
 - [Repository Class Diagram](documentation/REPOSITORY-CLASS-DIAGRAM.md)
+- [Branch Protection Rules](documentation/PROTECTION.md)
 
 ## Technology Stack (Planned)
 

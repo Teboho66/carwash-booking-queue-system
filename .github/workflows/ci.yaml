@@ -31,7 +31,7 @@ jobs:
         run: mvn -B package --file pom.xml
 
       - name: Run All tests
-        run: ./mvnw clean verify
+        run: mvn clean verify
 
       - name: Upload Test Results
         if: always()

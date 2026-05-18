@@ -33,7 +33,7 @@ jobs:
       - name: Run All tests
         run: |
           chmod +x ./mvnw
-          ./mvn clean verify
+          ./mvnw clean verify
 
       - name: Upload Test Results
         if: always()

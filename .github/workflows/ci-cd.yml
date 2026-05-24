@@ -40,45 +40,18 @@ jobs:
           name: junit-reports
           path: '**/target/surefire-reports/'
 
-  publish:
-    name: Publish JAR Release Artifact
-    runs-on: ubuntu-latest\
-    if: github.event == 'push' && github.ref == 'refs/heads/master' || github.event == 'push' && github.ref == 'refs/heads/develop'
-    needs: build_and_test
-
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v6
-
-      - name: Setup Java JDK
-        uses: actions/setup-java@v5
-        with:
-          java-version: ${{ env.JDK_VERSION }}
-          distribution: temurin
-          cache: maven
-
-      - name: Grant Maven wrapper permission
-        run: chmod +x ./mvnw
-
-      - name: Build JAR
-        run: ./mvnw clean package -DskipTests
-
-      - name: Upload JAR Artifact
-        uses: actions/upload-artifact@v7
-        with:
-          name: carwash-booking-queue-system-jar
-          path: target/*.jar
-
-
   Containerize:
     name: Containerize
     runs-on: ubuntu-latest
-    if: github.event == 'push' && github.ref == 'refs/heads/master' || github.event == 'push' && github.ref == 'refs/heads/develop'
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/tags/v'))
     needs: build_and_test
 
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v6
+
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@v4
 
       - name: Setup Docker Buildx
         uses: docker/setup-buildx-action@v4
@@ -89,24 +62,24 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Generate Image Tag
-        run: |
-          BRANCH=${GITHUB_REF_NAME}
-          SHA=$(git rev-parse --short HEAD)
-          DATE=$(date +'%Y%m%d-%H%M%S')
-          
-          TAG="${BRANCH}-${SHA}-${DATE}"
-          
-          echo "IMAGE_TAG=$TAG" >> $GITHUB_ENV
-          
-          echo "Generated tag: $TAG"
-          
-      - name: Build Docker Image
-        run: |
-          docker build \
-            -t ${{ secrets.DOCKER_USERNAME }}/carwash-booking-queue-system:${IMAGE_TAG} \
-            .
+      - name: Extract Docker metadata
+        id: meta
+        uses: docker/metadata-action@v6
+        with:
+          images: ${{ secrets.DOCKER_USERNAME }}/carwash-booking-queue-system
+          tags: |
+            type=sha
+            type=ref,event=branch
+            type=ref,event=tag
+            type=raw,value=latest,enable={{is_default_branch}}
 
-      - name: Push Docker Image
-        run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/carwash-booking-queue-system:${IMAGE_TAG}
+      - name: Build and Push Docker image
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          push: true
+          platforms: linux/amd64,linux/arm64
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

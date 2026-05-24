@@ -1,0 +1,145 @@
+# Master Branch Protection Justification
+
+## Purpose
+
+This document explains the branch protection rules applied to the `master` branch and the reason behind enforcing a controlled pull request flow from `develop` into `master`.
+
+The `master` branch represents the most stable version of the repository. Any changes merged into this branch should be reviewed, tested, and intentionally promoted from the development branch.
+
+## Protected Branch
+
+```text
+master
+```
+
+The `master` branch is protected to reduce the risk of accidental, unreviewed, or unstable changes being introduced directly into the main release branch.
+
+## Branch Protection Rules Applied
+
+The following protection rules have been enabled for the `master` branch:
+
+### 1. Require a Pull Request Before Merging
+
+All changes targeting `master` must be submitted through a pull request.
+
+This prevents direct commits to `master` and ensures that changes are reviewed before being merged.
+
+### 2. Require Approvals
+
+At least one approval is required before a pull request can be merged into `master`.
+
+This ensures that another team member has reviewed the changes and confirmed that they are acceptable.
+
+### 3. Dismiss Stale Pull Request Approvals
+
+Approvals are dismissed when new commits are pushed to the pull request branch.
+
+This is important because a pull request may change after approval. New commits could introduce issues, so the updated changes must be reviewed again.
+
+### 4. Require Status Checks to Pass Before Merging
+
+A required GitHub Actions status check has been configured:
+
+```text
+check-branch
+```
+
+The purpose of this check is to validate that pull requests into `master` only come from the `develop` branch.
+
+### 5. Require Conversation Resolution Before Merging
+
+All pull request conversations must be resolved before merging.
+
+This ensures that review comments, concerns, questions, or requested changes are properly addressed before the code is merged into `master`.
+
+## GitHub Actions Status Check
+
+The repository includes a GitHub Actions workflow that enforces the allowed source branch for pull requests into `master`.
+
+```yaml
+name: Enforce develop-only PRs into master
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  check-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check source branch
+        run: |
+          echo "Base branch: ${{ github.base_ref }}"
+          echo "Head branch: ${{ github.head_ref }}"
+
+          if [ "${{ github.head_ref }}" != "develop" ]; then
+            echo "Only PRs from 'develop' are allowed into 'master'"
+            exit 1
+          fi
+```
+
+## Justification for Enforcing `develop` to `master`
+
+The repository follows a controlled branch promotion strategy:
+
+```text
+feature branches → develop → master
+```
+
+This means that individual feature, bugfix, or experiment branches should first be merged into `develop`. Once the changes have been integrated, reviewed, and validated in `develop`, they can then be promoted to `master`.
+
+This approach helps maintain a clean and predictable release flow.
+
+## Why Direct Feature Branches Should Not Merge Into `master`
+
+Allowing any branch to merge directly into `master` can introduce several risks:
+
+- Unstable or incomplete work may reach the stable branch.
+- Changes may bypass integration testing in `develop`.
+- Multiple unrelated features may be promoted without proper coordination.
+- The release history can become harder to trace.
+- Review and approval standards may become inconsistent.
+
+By only allowing pull requests from `develop` into `master`, the repository ensures that `master` receives changes only after they have passed through the agreed development workflow.
+
+## Benefits
+
+This branch protection setup provides the following benefits:
+
+- Protects the stability of the `master` branch.
+- Prevents accidental direct commits to `master`.
+- Enforces peer review before merging.
+- Ensures all discussions are resolved before merge.
+- Ensures required automated checks pass before merge.
+- Creates a clear promotion path from development to stable code.
+- Improves traceability and accountability in the Git history.
+
+## Expected Workflow
+
+Developers should follow this process:
+
+1. Create a feature or fix branch from `develop`.
+
+   ```bash
+   git checkout develop
+   git checkout -b feature/example-change
+   ```
+
+2. Commit changes to the feature branch.
+
+3. Open a pull request from the feature branch into `develop`.
+
+4. Once reviewed and merged into `develop`, open a pull request from `develop` into `master`.
+
+5. The pull request into `master` must pass the required `check-branch` status check.
+
+6. After approval and conversation resolution, the pull request can be merged into `master`.
+
+## Summary
+
+The branch protection rules on `master` are in place to ensure that only reviewed, approved, and properly promoted changes are merged into the stable branch.
+
+The required `check-branch` GitHub Actions workflow adds an extra safeguard by ensuring that only the `develop` branch can be used as the source branch for pull requests into `master`.
+
+This supports a safer, cleaner, and more controlled development and release process.

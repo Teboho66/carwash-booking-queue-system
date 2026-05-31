@@ -88,6 +88,43 @@ http://localhost:8080/v3/api-docs
 
 This repository is an open-source learning project for building a practical web-based car wash booking and queue management system. The project has already attracted community interest with **19 stars** and **21 forks**, and contributions are welcome from reviewers, and external contributors.
 
+## Community and Peer Review
+
+This repository was prepared using open-source collaboration practices.
+
+The project includes:
+
+- contribution guidelines
+- roadmap documentation
+- issue labeling strategy
+- CI/CD automation
+- onboarding documentation
+
+Community engagement metrics:
+
+| Metric | Count |
+|--------|--------|
+| Stars | 19 |
+| Forks | 21 |
+
+Contributions, suggestions, and peer reviews are welcome.
+
+## Evidence
+
+Files included:
+
+- [Contribution](documentation/CONTRIBUTION.md)
+- [Roadmap](documentation/ROADMAP.md)
+- [Licence](LICENCE)
+- VOTING-RESULTS.md
+- [Reflection](documentation/REFLECTION.md)
+
+Screenshots:
+
+```text
+documentation/screenshots/peer-review/
+```
+
 ## Project Documentation
 
 Detailed system documentation and architecture diagrams are available in the following files:

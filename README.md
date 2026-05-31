@@ -36,6 +36,58 @@ The initial system prototype will support:
 - Service status updates
 - Customer ratings and feedback
 
+## Getting Started
+
+Follow these steps to set up the project locally for development, testing, or contribution.
+
+### Clone
+
+```bash
+git clone https://github.com/ongeziwe17/carwash-booking-queue-system.git
+cd carwash-booking-queue-system
+```
+
+### Build
+
+```bash
+./mvnw clean package
+```
+
+### Run
+
+```bash
+./mvnw spring-boot:run
+```
+
+### Swagger UI
+
+After starting the Spring Boot application, open Swagger UI at:
+
+```text
+http://localhost:8080/swagger-ui/index.html
+```
+
+OpenAPI JSON is available at:
+
+```text
+http://localhost:8080/v3/api-docs
+```
+
+## Features Available for Contribution
+
+| Area | Difficulty | Suggested Label |
+|--------|--------|--------|
+| Input Validation Improvements | Beginner | good-first-issue |
+| API Pagination | Beginner | good-first-issue |
+| Audit Logging | Intermediate | feature-request |
+| JWT Authentication | Intermediate | feature-request |
+| Redis Caching | Advanced | feature-request |
+| Kubernetes Deployment | Advanced | feature-request |
+
+## Community Engagement
+
+This repository is an open-source learning project for building a practical web-based car wash booking and queue management system. The project has already attracted community interest with **19 stars** and **21 forks**, and contributions are welcome from reviewers, and external contributors.
+
 ## Project Documentation
 
 Detailed system documentation and architecture diagrams are available in the following files:
@@ -60,6 +112,9 @@ Detailed system documentation and architecture diagrams are available in the fol
 - [Class Diagram](documentation/CLASS-DIAGRAM.md)
 - [Repository Class Diagram](documentation/REPOSITORY-CLASS-DIAGRAM.md)
 - [Branch Protection Rules](documentation/PROTECTION.md)
+- [Contribution](documentation/CONTRIBUTION.md)
+- [Roadmap](documentation/ROADMAP.md)
+- [Licence](LICENCE)
 
 ## Technology Stack (Planned)
 

@@ -73,6 +73,22 @@ OpenAPI JSON is available at:
 http://localhost:8080/v3/api-docs
 ```
 
+## Looking to Contribute?
+
+Start with one of our beginner-friendly issues:
+
+Issues marked with code '**Contr-**:'
+
+- good-first-issue
+- help-wanted
+- enhancement
+
+View Issues:
+
+```text
+https://github.com/ongeziwe17/carwash-booking-queue-system/issues
+```
+
 ## Features Available for Contribution
 
 | Area | Difficulty | Suggested Label |

@@ -1,74 +1,144 @@
 # Contributing to Carwash Booking Queue System
 
-## Welcome
+Thank you for your interest in contributing to the **Carwash Booking Queue System**. This repository is a Java/Spring Boot learning project that models a web-based car wash service catalog, booking flow, and queue-management API.
 
-Thank you for your interest in contributing to the **Web-Based Car Wash Booking and Queue Management System**. This project demonstrates how a car wash business can digitize service discovery, booking, and queue management so customers can view available services, join or schedule queues, and track service progress more efficiently.
+## Project Overview
 
-Contributions are welcome from students, maintainers, and external open-source contributors. Whether you are improving documentation, adding tests, refining the API, or implementing new features, your contribution helps strengthen the project as a practical learning and collaboration platform.
+### What the system does
+
+The application helps a car wash business manage:
+
+- Users and customer profiles
+- Vehicles linked to customers
+- Car wash services, pricing, and estimated duration
+- Bookings for future service times
+- Queue entries and queue status transitions
+
+The current implementation exposes REST APIs for these workflows and stores data through repository abstractions backed by in-memory repositories. This makes the project easy to run locally and approachable for first-time contributors.
+
+### Technology stack
+
+- Java 21
+- Spring Boot
+- Maven / Maven Wrapper
+- Spring Web MVC
+- springdoc OpenAPI / Swagger UI
+- JUnit and Spring Boot test support
+- GitHub Actions for CI/CD
+- Dockerfile for container builds
+
+### Current project status
+
+The project is a working educational prototype. The core domain model, repository interfaces, service layer, REST controllers, Swagger/OpenAPI setup, CI workflow, and test suite are present. The best contribution opportunities are currently small improvements around documentation, validation, API consistency, exception responses, service edge cases, and test coverage.
 
 ## Development Setup
 
 ### Prerequisites
 
-Before working on the project, install the following tools:
+Install the following before you start:
 
 - Java 21
-- Spring boot
-- Maven
+- Maven, or use the included Maven Wrapper (`./mvnw`)
+- Spring Boot knowledge for backend API work
 - Git
-- Docker
 
-### Clone Repository
+### Clone the repository
 
 ```bash
 git clone https://github.com/ongeziwe17/carwash-booking-queue-system.git
 cd carwash-booking-queue-system
 ```
 
-### Build
+### Build the project
 
 ```bash
-./mvnw clean package
+./mvnw clean install
 ```
 
-### Run Tests
-
-```bash
-./mvnw test
-```
-
-### Run Application
+### Run the application
 
 ```bash
 ./mvnw spring-boot:run
 ```
 
-## Coding Standards
+After the app starts, Swagger UI is available at:
 
-Please follow these standards when contributing:
+```text
+http://localhost:8080/swagger-ui/index.html
+```
 
-- Follow the existing package structure and naming conventions.
-- Write meaningful commit messages that describe the intent of the change.
-- Add or update tests for new functionality and bug fixes.
-- Ensure the CI pipeline passes before requesting review.
-- Use standard Java naming conventions for classes, methods, variables, and packages.
-- Keep methods focused, readable, and maintainable.
-- Prefer small, reviewable pull requests over large unrelated changes.
+The OpenAPI JSON is available at:
 
-## Pull Request Process
+```text
+http://localhost:8080/v3/api-docs
+```
 
-1. Fork the repository.
-2. Create a feature branch (feaure/name-of-branch) from the latest development branch (develop).
-3. Implement the change with clear, focused commits.
-4. Add or update tests and documentation where applicable.
-5. Submit a Pull Request with a clear summary and testing notes.
-6. Wait for the maintainer to review and address requested changes.
+## Running Tests
 
-## Good First Issues
+Run the automated test suite with:
 
-New contributors can start by looking for issues labeled:
+```bash
+./mvnw test
+```
+
+Before opening a pull request, make sure the tests pass locally. If you add behavior, update or add tests for that behavior.
+
+## Contribution Workflow
+
+1. **Select an issue.** Choose an issue that matches your experience level. New contributors should start with `good-first-issue` or documentation/testing tasks.
+2. **Comment on the issue.** Leave a short comment saying you would like to work on it so maintainers and other contributors know it is in progress.
+3. **Create a feature branch.** Use a focused branch name, for example `feature/improve-booking-validation` or `docs/update-api-examples`.
+4. **Implement changes.** Keep the pull request small and focused on one issue.
+5. **Add or update tests.** Include unit or integration tests for bug fixes, validation changes, and API behavior changes.
+6. **Ensure CI passes.** Run `./mvnw test` locally and check the GitHub Actions result after opening the PR.
+7. **Submit a Pull Request.** Include a clear summary, testing notes, and the issue number it resolves.
+
+## Recommended Starter Areas
+
+### Documentation improvements
+
+Documentation contributions are a great first step. Useful tasks include improving endpoint examples, documenting request/response payloads, updating setup instructions, and clarifying architecture diagrams.
+
+### Unit testing
+
+The service layer has useful validations and state transitions that can be tested in small, focused JUnit tests. Good starter tests include null request handling, duplicate records, queue transitions, and repository filtering behavior.
+
+### Validation improvements
+
+Several API request DTOs are plain records without Bean Validation annotations. Contributors can add `jakarta.validation` constraints, use `@Valid` in controllers, and improve validation error messages.
+
+### API enhancements
+
+REST APIs are implemented, but there are opportunities to make endpoint summaries, response annotations, filtering options, and request examples more consistent.
+
+### Exception handling
+
+The global exception handler exists, but validation errors can be made more contributor- and client-friendly by returning field-specific messages rather than a generic exception string.
+
+## Pull Request Guidelines
+
+- Keep pull requests small and reviewable.
+- Follow the existing Java package structure and naming conventions.
+- Avoid unrelated formatting changes.
+- Add tests for new behavior or bug fixes.
+- Update documentation when API behavior changes.
+- Use clear commit messages, preferably following a conventional style such as `docs:`, `test:`, `fix:`, or `feat:`.
+
+## Suggested Labels for Maintainers
+
+Useful labels for onboarding external contributors include:
 
 - `good-first-issue`
-- `feature-request`
+- `help-wanted`
+- `enhancement`
+- `documentation`
+- `testing`
+- `validation`
+- `api`
+- `bug`
+- `ci`
+- `refactor`
 
-Good first contributions may include improving validation messages, refining README examples, enhancing Swagger descriptions, or adding small API improvements. If you are unsure where to start, comment on an open issue and ask for guidance.
+## Need Help?
+
+If you are unsure where to start, comment on an issue and ask for guidance. Maintainer (**ongeziwe17**) should be able to point you to a small file or test class where the change can begin.

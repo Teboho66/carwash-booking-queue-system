@@ -11,7 +11,7 @@ import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 public record CreateBookingRequest(
-        @NotBlank(message = "bookingId is required")
+        @NotBlank(message = "bookingId is required")  
         String bookingId,
 
         @NotBlank(message = "userId is required")

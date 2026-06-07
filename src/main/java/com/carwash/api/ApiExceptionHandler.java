@@ -66,7 +66,7 @@ public class ApiExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ApiErrorResponse> handleInternalServerError(
+    public ResponseEntity<ApiErrorResponse> handleInternalServerError(  
             Exception ex,
             ServletWebRequest request
     ) {
